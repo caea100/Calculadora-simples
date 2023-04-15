@@ -18,9 +18,9 @@ const RESOURCES = {
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "1cd30fdc3a638e7c94df835468100fef",
-"/": "1cd30fdc3a638e7c94df835468100fef",
-"main.dart.js": "66d8020b964a22d7582383be7ea9725d",
+"index.html": "9f603564b5bb7ad6a76e36ebd30beecf",
+"/": "9f603564b5bb7ad6a76e36ebd30beecf",
+"main.dart.js": "1b1fc4bb91cdff72c77d57ce7e311c64",
 "manifest.json": "354be66aca96a33f544d5695fc8f65c0",
 "version.json": "723c82b7b5ca72e45d8d670e63fea02a"
 };
