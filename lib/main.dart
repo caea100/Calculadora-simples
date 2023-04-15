@@ -73,6 +73,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Color.fromARGB(255, 17, 16, 16),
         appBar: AppBar(
           backgroundColor: Colors.red,
           title: const Center(
@@ -87,53 +88,61 @@ class _MyAppState extends State<MyApp> {
               children: [
                 Text(
                   numero,
-                  style: const TextStyle(fontSize: 75),
+                  style: const TextStyle(fontSize: 75, color: Colors.white),
                 ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                buildButton('AC'),
+                botaoGenerico('AC'),
                 const SizedBox(),
                 const SizedBox(),
-                buildButton('<X'),
+                Container(
+                  decoration: BoxDecoration(
+                      color: Colors.black, shape: BoxShape.circle),
+                  child: IconButton(
+                    icon: Icon(Icons.arrow_back),
+                    onPressed: () => calcular('<X'),
+                    color: Colors.white,
+                  ),
+                ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                buildButton('7'),
-                buildButton('8'),
-                buildButton('9'),
-                buildButton('/'),
+                botaoGenerico('7'),
+                botaoGenerico('8'),
+                botaoGenerico('9'),
+                botaoGenerico('/'),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                buildButton('4'),
-                buildButton('5'),
-                buildButton('6'),
-                buildButton('X'),
+                botaoGenerico('4'),
+                botaoGenerico('5'),
+                botaoGenerico('6'),
+                botaoGenerico('X'),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                buildButton('1'),
-                buildButton('2'),
-                buildButton('3'),
-                buildButton('-'),
+                botaoGenerico('1'),
+                botaoGenerico('2'),
+                botaoGenerico('3'),
+                botaoGenerico('-'),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                buildButton('0'),
-                buildButton(','),
-                buildButton('='),
-                buildButton('+'),
+                botaoGenerico('0'),
+                botaoGenerico(','),
+                botaoGenerico('='),
+                botaoGenerico('+'),
               ],
             ),
           ],
@@ -142,8 +151,12 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  Widget buildButton(String tecla) {
+  Widget botaoGenerico(String tecla) {
     return ElevatedButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(Colors.black),
+        foregroundColor: MaterialStateProperty.all(Colors.white),
+      ),
       key: ValueKey(tecla),
       onPressed: () => calcular(tecla),
       child: Text(tecla),
