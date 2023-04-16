@@ -152,14 +152,21 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget botaoGenerico(String tecla) {
-    return ElevatedButton(
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(Colors.black),
-        foregroundColor: MaterialStateProperty.all(Colors.white),
+    return Expanded(
+      flex: 1,
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 4),
+        child: ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.black),
+            foregroundColor: MaterialStateProperty.all(Colors.white),
+            minimumSize: MaterialStateProperty.all(Size(double.infinity, 50)),
+          ),
+          key: ValueKey(tecla),
+          onPressed: () => calcular(tecla),
+          child: Text(tecla),
+        ),
       ),
-      key: ValueKey(tecla),
-      onPressed: () => calcular(tecla),
-      child: Text(tecla),
     );
   }
 }
